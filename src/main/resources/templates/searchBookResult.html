@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" xmlns:th="http://www.thymeleaf.org">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container-fluid text-center">
+    <table class="table table-bordered" style="max-width: 900px;margin: auto">
+        <div class="alert-success alert-danger h5 m-4" th:text="${error}"></div>
+        <div class="alert-success h5 m-4" th:text="${success}"></div>
+        <thead class="table-dark">
+        <tr class="text-center">
+            <th >Name</th>
+            <th>Library</th>
+            <th>Categories</th>
+        </tr>
+        </thead>
+        <tr th:each="book:${books}">
+            <td class="h5" style="color: darkblue" th:text="${book.getName()}"></td>
+            <td class="h6" th:text="${book.getLibrary().getName()}"></td>
+            <td>
+                <h6 th:each="cate: ${book.getCategoryList()}" th:text="'* '+${cate.getName()}"></h6>
+
+            </td>
+        </tr>
+    </table>
+</div>
+</body>
+</html>

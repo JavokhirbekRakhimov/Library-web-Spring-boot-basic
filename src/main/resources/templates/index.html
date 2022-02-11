@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+  <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <title>Title</title>
+</head>
+<body>
+<div class="container-fluid text-center m-4">
+    <div class="alert-success alert-danger h5 m-4" th:text="${error}"></div>
+    <div class="alert-success h5 m-4" th:text="${success}"></div>
+    <div class="border border-secondary rounded-3 " style="max-width: 700px;margin: auto;background: aqua">
+        <div class="form-group row m-2">
+          <div class="col-sm-4">
+              <button class="form-control"  onclick="addLibrary()">Add Library</button>
+          </div>
+          <div class="col-sm-8">
+              <button class="form-control"  onclick="showLibrary()">Show Library</button>
+          </div>
+      </div>
+        <div class="form-group row m-2">
+            <div>
+                <button class="form-control" onclick="oprCategory()">Category operations</button>
+            </div>
+        </div>
+        <div class="form-group row m-2">
+            <div>
+                <button class="form-control" onclick="oprBook()">Book operations</button>
+            </div>
+        </div>
+        <div class="form-group row m-2">
+            <div>
+                <button class="form-control" onclick="searchBook()">Search book</button>
+            </div>
+        </div>
+  </div>
+</div>
+<script type="text/javascript">
+    function showLibrary(){
+        window.location="[[@{/library}]]";
+    }
+    function addLibrary(){
+        window.location="[[@{/library/add}]]";
+    }
+    function oprBook(){
+        window.location="[[@{/book}]]";
+    }
+    function oprCategory(){
+        window.location="[[@{/category}]]";
+    }
+    function searchBook(){
+        window.location="[[@{/book/search}]]";
+    }
+</script>
+</body>
+</html>

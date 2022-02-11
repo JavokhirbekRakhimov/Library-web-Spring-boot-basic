@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<div class="container-fluid text-center">
+    <div class="alert-success" th:text="${message}"></div>
+    <div class="border border-secondary rounded-3" style="max-width: 1100px;margin: auto">
+        <label class="text-center h2 m-4" style="color: blue">Library</label>
+        <table class="table table-bordered" style="background: #b7f3f3">
+            <thead class="table-dark">
+            <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Home</th>
+                <th>Street</th>
+                <th>Active</th>
+                <th>Operation</th>
+            </tr>
+            </thead>
+                <tr th:each="lib:${libraries}">
+                    <td class="h5" style="background: white;color: #ea4747" th:text="${lib.getName()}"></td>
+                    <td th:text="${lib.getAddress().getCity()}"></td>
+                    <td th:text="${lib.getAddress().getHome()}"></td>
+                    <td th:text="${lib.getAddress().getStreet()}"></td>
+                    <td class="h6" style="background: cornflowerblue" th:text="${lib.isActive()}"></td>
+                    <td style="background: darkturquoise;">
+                        <a class="btn btn-primary" th:href="@{'/library/edite/'+${lib.getId()}}">Edite</a>
+                        <a class="btn border-secondary" style="background: #ea4747" data-bs-toggle="tooltip" data-bs-placement="top" title="Delete qilmaydi" th:href="@{'/library/delete/'+${lib.getId()}}">Delete</a>
+                    </td>
+                </tr>
+        </table>
+    </div>
+
+</div>
+</body>
+</html>
