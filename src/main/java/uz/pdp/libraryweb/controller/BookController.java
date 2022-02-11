@@ -12,6 +12,7 @@ import uz.pdp.libraryweb.service.CategoryService;
 import uz.pdp.libraryweb.service.LibraryService;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Controller
 @RequestMapping(path = "/book")
@@ -69,7 +70,7 @@ public class BookController {
         bookDto.setLibrary(book.getLibrary().getId());
         bookDto.setActive(book.isActive());
         bookDto.setName(book.getName());
-        bookDto.setCategoryList(book.getCategoryList().stream().map(Category::getId).toList());
+        bookDto.setCategoryList(book.getCategoryList().stream().map(Category::getId).collect(Collectors.toList()));
         model.addAttribute("bookDto",bookDto);
       return "editeBookPage";
     }
