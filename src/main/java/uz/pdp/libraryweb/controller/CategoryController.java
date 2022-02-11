@@ -31,13 +31,14 @@ public class CategoryController {
     }
    @PostMapping(path = "/add")
     public String addCategory(CategoryDto categoryDto,Model model){
-       List<Category> all = categoryService.getAll();
-       model.addAttribute("categories",all);
+
        Response response = categoryService.addCategory(categoryDto);
        if(response.isSuccess())
            model.addAttribute("success",response.getMessage());
        else
            model.addAttribute("error",response.getMessage());
+       List<Category> all = categoryService.getAll();
+       model.addAttribute("categories",all);
        System.out.println(categoryDto);
         return "categoryOperation";
    }
