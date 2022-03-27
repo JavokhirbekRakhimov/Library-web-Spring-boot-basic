@@ -1,4 +1,4 @@
-package uz.pdp.libraryweb.entity;
+package uz.pdp.libraryweb.copyTest.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.*;

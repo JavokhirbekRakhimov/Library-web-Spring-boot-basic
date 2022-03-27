@@ -1,4 +1,4 @@
-package uz.pdp.libraryweb.dto;
+package uz.pdp.libraryweb.copyTest.dto;
 
 import lombok.Data;
 

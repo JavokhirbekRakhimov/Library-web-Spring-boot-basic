@@ -1,9 +1,9 @@
-package uz.pdp.libraryweb.service;
+package uz.pdp.libraryweb.copyTest.service;
 import org.springframework.stereotype.Service;
-import uz.pdp.libraryweb.dto.CategoryDto;
-import uz.pdp.libraryweb.dto.Response;
-import uz.pdp.libraryweb.entity.Category;
-import uz.pdp.libraryweb.repository.CategoryRepository;
+import uz.pdp.libraryweb.copyTest.dto.CategoryDto;
+import uz.pdp.libraryweb.copyTest.dto.Response;
+import uz.pdp.libraryweb.copyTest.entity.Category;
+import uz.pdp.libraryweb.copyTest.repository.CategoryRepository;
 
 import java.util.List;
 import java.util.Optional;

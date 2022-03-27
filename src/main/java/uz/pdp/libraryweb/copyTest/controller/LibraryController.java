@@ -1,11 +1,11 @@
-package uz.pdp.libraryweb.controller;
+package uz.pdp.libraryweb.copyTest.controller;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-import uz.pdp.libraryweb.dto.LibraryDto;
-import uz.pdp.libraryweb.dto.Response;
-import uz.pdp.libraryweb.entity.Library;
-import uz.pdp.libraryweb.service.LibraryService;
+import uz.pdp.libraryweb.copyTest.dto.LibraryDto;
+import uz.pdp.libraryweb.copyTest.dto.Response;
+import uz.pdp.libraryweb.copyTest.entity.Library;
+import uz.pdp.libraryweb.copyTest.service.LibraryService;
 
 import java.util.List;
 

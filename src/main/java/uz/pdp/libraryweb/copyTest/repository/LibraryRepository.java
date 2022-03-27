@@ -1,7 +1,6 @@
-package uz.pdp.libraryweb.repository;
+package uz.pdp.libraryweb.copyTest.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
-import uz.pdp.libraryweb.entity.Library;
-
+import uz.pdp.libraryweb.copyTest.entity.Library;
 
 import java.util.Optional;
 
