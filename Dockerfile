@@ -5,7 +5,7 @@ COPY pom.xml /build/
 COPY src /build/src/
 RUN mvn clean package
 
-COPY target/Library-web-Spring-boot-basic-${VERSION}.jar target/application.jar
+COPY target/Library-web-${VERSION}.jar target/application.jar
 FROM openjdk-11.0.14
 WORKDIR /app/
 COPY --from=BUILDER /build/target/aplication.jar /app/
