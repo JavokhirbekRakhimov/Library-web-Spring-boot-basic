@@ -1,0 +1,25 @@
+version: '3.4'
+
+services:
+  app:
+    image: 'library:latest'
+    build:
+      context: .
+    container_name: library_db
+    depends_on:
+      - postgres
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://postgres:5432/library_db
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=3611675
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=create
+      - SPRING_JPA_SHOW_SQL=true
+    ports:
+      - 8080:8080
+
+  postgres:
+    image: 'postgres:13.1-alpine'
+    container_name: library_db
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=3611675
